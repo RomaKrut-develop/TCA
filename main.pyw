@@ -124,6 +124,7 @@ def execute_command(command): # Центр комманд
             output_counter += 10 # Учтём, что пока я не придумал как добавить сброс оутпута по таймеру, у пользователя не будет шанса прекратить баловаться с программой
             if output_counter >= 210:
                 try:
+                    logging.info('Пользователь решил поспамить в консоль. Исход очевиден')
                     mixer.init(frequency=44100, size=-16, channels=8)
                     stop_sound = mixer.Sound('stop.mp3')
                     stop_channel = mixer.find_channel()
